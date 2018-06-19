@@ -12,6 +12,7 @@ const PassThrough = require('./PassThrough');
 	const results = await task(0); // results is 3
 * ```
 *
+* @name InSeries
 * @param {...function} tasks - any number of async tasks.
 * @returns {function} an async wrapper function that runs all of the tasks in series, calling each one with the results of the previous one
 * @memberof aah

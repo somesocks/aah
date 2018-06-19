@@ -12,6 +12,7 @@ const PassThrough = require('./PassThrough');
 	const results = await task(0); // results is [1, 2, 3]
 * ```
 *
+* @name InParallel
 * @param {...function} tasks - any number of async tasks.
 * @returns {function} an async wrapper function that runs all the tasks in parallel, and returns an array of results
 * @memberof aah

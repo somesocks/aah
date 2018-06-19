@@ -7,6 +7,7 @@
 * ```
 *
 * PassThrough does nothing, just passes the request through as the result
+* @name PassThrough
 * @memberof aah
 */
 const PassThrough = async function (request) {
