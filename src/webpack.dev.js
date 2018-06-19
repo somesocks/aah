@@ -32,7 +32,7 @@ BUNDLE.module = {
 				presets: [
 					[ 'es2015', { 'modules': 'commonjs' } ],
 				],
-				plugins: [ 'transform-runtime' ],
+				plugins: [ 'transform-async-to-generator', 'transform-runtime' ],
 				cacheDirectory: true,
 			},
 		},
