@@ -11,7 +11,7 @@ gulp.task(
 
 gulp.task(
 	'build',
-	'build vet',
-	// [ 'build-docs' ],
+	'build aah',
+	[ 'build-docs' ],
 	shell.task('webpack --config ./src/webpack.js')
 );
