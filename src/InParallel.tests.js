@@ -4,7 +4,7 @@ const { isFunction } = Vet;
 
 import test from 'ava';
 
-import { InParallel } from '../dist/aah';
+import { InParallel } from '../dist/aah.dev';
 
 test(
 	'InParallel is a function',

@@ -4,7 +4,7 @@ const { isFunction } = Vet;
 
 import test from 'ava';
 
-import { InSeries } from '../dist/aah';
+import { InSeries } from '../dist/aah.dev';
 
 test(
 	'InSeries is a function',

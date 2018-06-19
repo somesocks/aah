@@ -4,7 +4,7 @@ const { isFunction } = Vet;
 
 import test from 'ava';
 
-import { PassThrough, InSeries } from '../dist/aah';
+import { PassThrough } from '../dist/aah.dev';
 
 test(
 	'PassThrough works',
