@@ -28,3 +28,24 @@ test(
 		test.deepEqual(results, 3);
 	}
 );
+
+test(
+	'InSeries errors propagate 1',
+	async (test) => {
+
+		const task = InSeries(
+			async (i) => { throw new Error() },
+			async (i) => i + 1,
+			async (i) => i + 1
+		);
+
+		try {
+			const results = await task(0);
+		} catch (e) {
+			test.pass();
+			return;
+		}
+
+		test.fail();
+	}
+);
