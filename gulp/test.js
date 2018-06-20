@@ -7,11 +7,11 @@ const ARGS = process.argv
 	.slice(3)
 	.join(' ');
 
-const CMD = [
-	`export NODE_PATH=./;`,
-	`find ./src -name '*.tests.js'`,
-	`| xargs mocha --timeout 120000 ${ARGS};`,
-].join(' ');
+// const CMD = [
+// 	`export NODE_PATH=./;`,
+// 	`find ./src -name '*.tests.js'`,
+// 	`| xargs mocha --timeout 120000 ${ARGS};`,
+// ].join(' ');
 
 gulp.task(
 	'test',
