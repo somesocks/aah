@@ -7,10 +7,34 @@ A JavaScript library of async/await helpers
 **Kind**: global namespace  
 
 * [aah](#aah) : <code>object</code>
+    * [.Callbackify](#aah.Callbackify) ⇒ <code>function</code>
     * [.CatchError](#aah.CatchError) ⇒ <code>function</code>
     * [.InParallel](#aah.InParallel) ⇒ <code>function</code>
     * [.InSeries](#aah.InSeries) ⇒ <code>function</code>
     * [.PassThrough](#aah.PassThrough)
+    * [.Promisify](#aah.Promisify) ⇒ <code>function</code>
+
+<a name="aah.Callbackify"></a>
+
+### aah.Callbackify ⇒ <code>function</code>
+```javascript
+	const task = Callbackify(
+		async (i) => i + 1
+	);
+
+	// logs 'res 1', eventually
+	task(
+		(err, res) => console.log('res', res),
+		0
+	);
+```
+
+**Kind**: static property of [<code>aah</code>](#aah)  
+**Returns**: <code>function</code> - a callback-expecting function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| task | <code>function</code> | an async function |
 
 <a name="aah.CatchError"></a>
 
@@ -80,3 +104,25 @@ A JavaScript library of async/await helpers
 PassThrough does nothing, just passes the request through as the result
 
 **Kind**: static property of [<code>aah</code>](#aah)  
+<a name="aah.Promisify"></a>
+
+### aah.Promisify ⇒ <code>function</code>
+```javascript
+	const task = Promisify(
+		(onDone, i) => onDone(
+			i === 0 ? new Error('i cant be 0') : null,
+			i + 1
+		),
+	);
+
+	const results = await task(1); // results is 2
+	const results2 = await taks(0); // throws 'i cant be 0 Error
+```
+
+**Kind**: static property of [<code>aah</code>](#aah)  
+**Returns**: <code>function</code> - an async function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| task | <code>function</code> | a callback-expecting function |
+

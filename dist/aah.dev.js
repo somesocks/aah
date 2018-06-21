@@ -931,6 +931,18 @@ eval("/**\n * Copyright (c) 2014-present, Facebook, Inc.\n *\n * This source cod
 
 /***/ }),
 
+/***/ "./src/Callbackify.js":
+/*!****************************!*\
+  !*** ./src/Callbackify.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar PassThrough = __webpack_require__(/*! ./PassThrough */ \"./src/PassThrough.js\");\n\n/**\n* ```javascript\n\tconst task = Callbackify(\n\t\tasync (i) => i + 1\n\t);\n\n\t// logs 'res 1', eventually\n\ttask(\n\t\t(err, res) => console.log('res', res),\n\t\t0\n\t);\n* ```\n*\n* @name Callbackify\n* @param {function} task - an async function\n* @returns {function} a callback-expecting function\n* @memberof aah\n*/\nvar Callbackify = function Callbackify(task) {\n\tif (task.length === 0) {\n\t\treturn PassThrough;\n\t}\n\n\treturn function (callback, request) {\n\t\ttask(request).then(function (result) {\n\t\t\treturn callback(null, result);\n\t\t}).catch(function (error) {\n\t\t\treturn callback(error);\n\t\t});\n\t};\n};\n\nmodule.exports = Callbackify;\n\n//# sourceURL=webpack:///./src/Callbackify.js?");
+
+/***/ }),
+
 /***/ "./src/CatchError.js":
 /*!***************************!*\
   !*** ./src/CatchError.js ***!
@@ -979,6 +991,18 @@ eval("\n\nvar _regenerator = __webpack_require__(/*! babel-runtime/regenerator *
 
 /***/ }),
 
+/***/ "./src/Promisify.js":
+/*!**************************!*\
+  !*** ./src/Promisify.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _promise = __webpack_require__(/*! babel-runtime/core-js/promise */ \"./node_modules/babel-runtime/core-js/promise.js\");\n\nvar _promise2 = _interopRequireDefault(_promise);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar PassThrough = __webpack_require__(/*! ./PassThrough */ \"./src/PassThrough.js\");\n\n/**\n* ```javascript\n\tconst task = Promisify(\n\t\t(onDone, i) => onDone(\n\t\t\ti === 0 ? new Error('i cant be 0') : null,\n\t\t\ti + 1\n\t\t),\n\t);\n\n\tconst results = await task(1); // results is 2\n\tconst results2 = await taks(0); // throws 'i cant be 0 Error\n* ```\n*\n* @name Promisify\n* @param {function} task - a callback-expecting function\n* @returns {function} an async function\n* @memberof aah\n*/\nvar Promisify = function Promisify(task) {\n\tif (task.length === 0) {\n\t\treturn PassThrough;\n\t}\n\n\treturn function (request) {\n\n\t\tvar handler = function handler(resolve, reject) {\n\t\t\tvar callback = function callback(err, results) {\n\t\t\t\tif (err) {\n\t\t\t\t\treject(err);\n\t\t\t\t} else {\n\t\t\t\t\tresolve(results);\n\t\t\t\t}\n\t\t\t};\n\n\t\t\ttry {\n\t\t\t\ttask(callback, request);\n\t\t\t} catch (err) {\n\t\t\t\treject(err);\n\t\t\t}\n\t\t};\n\n\t\treturn new _promise2.default(handler);\n\t};\n};\n\nmodule.exports = Promisify;\n\n//# sourceURL=webpack:///./src/Promisify.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -987,7 +1011,7 @@ eval("\n\nvar _regenerator = __webpack_require__(/*! babel-runtime/regenerator *
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n/** @namespace aah */\n\nmodule.exports = {\n\tCatchError: __webpack_require__(/*! ./CatchError */ \"./src/CatchError.js\"),\n\tInSeries: __webpack_require__(/*! ./InSeries */ \"./src/InSeries.js\"),\n\tInParallel: __webpack_require__(/*! ./InParallel */ \"./src/InParallel.js\"),\n\tPassThrough: __webpack_require__(/*! ./PassThrough */ \"./src/PassThrough.js\")\n};\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\n/** @namespace aah */\n\nmodule.exports = {\n\tCatchError: __webpack_require__(/*! ./CatchError */ \"./src/CatchError.js\"),\n\tInSeries: __webpack_require__(/*! ./InSeries */ \"./src/InSeries.js\"),\n\tInParallel: __webpack_require__(/*! ./InParallel */ \"./src/InParallel.js\"),\n\tPassThrough: __webpack_require__(/*! ./PassThrough */ \"./src/PassThrough.js\"),\n\tCallbackify: __webpack_require__(/*! ./Callbackify */ \"./src/Callbackify.js\"),\n\tPromisify: __webpack_require__(/*! ./Promisify */ \"./src/Promisify.js\")\n};\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

@@ -1,6 +1,6 @@
 {
 	"name": "aah",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "A library of async/await helpers",
 	"main": "dist/aah.umd.js",
 	"files": [
