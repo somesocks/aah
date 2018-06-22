@@ -15,6 +15,7 @@ A JavaScript library of async/await helpers
     * [.PassThrough](#aah.PassThrough)
     * [.Promisify](#aah.Promisify) ⇒ <code>function</code>
     * [.Race](#aah.Race) ⇒ <code>function</code>
+    * [.TimeOut](#aah.TimeOut) ⇒ <code>function</code>
 
 <a name="aah.Callbackify"></a>
 
@@ -162,4 +163,23 @@ PassThrough does nothing, just passes the request through as the result
 | Param | Type | Description |
 | --- | --- | --- |
 | ...tasks | <code>function</code> | any number of async tasks |
+
+<a name="aah.TimeOut"></a>
+
+### aah.TimeOut ⇒ <code>function</code>
+```javascript
+	const task1 = TimeOut( Delay(100), 1000);
+	const task2 = TimeOut( Delay(1000), 100);
+
+	const result1 = await task1(1); // result1 = 1, after 100 ms
+	const result2 = await task2(1); // throws a timeout error after 100 ms
+```
+
+**Kind**: static property of [<code>aah</code>](#aah)  
+**Returns**: <code>function</code> - an async task  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| task | <code>function</code> | an async tasks |
+| timeOut | <code>function</code> | the number of ms before throwing an error |
 

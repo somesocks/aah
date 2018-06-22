@@ -9,4 +9,5 @@ module.exports = {
 	PassThrough: require('./PassThrough'),
 	Promisify: require('./Promisify'),
 	Race: require('./Race'),
+	TimeOut: require('./TimeOut'),
 };

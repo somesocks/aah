@@ -1027,6 +1027,18 @@ eval("\n\nvar _regenerator = __webpack_require__(/*! babel-runtime/regenerator *
 
 /***/ }),
 
+/***/ "./src/TimeOut.js":
+/*!************************!*\
+  !*** ./src/TimeOut.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _regenerator = __webpack_require__(/*! babel-runtime/regenerator */ \"./node_modules/babel-runtime/regenerator/index.js\");\n\nvar _regenerator2 = _interopRequireDefault(_regenerator);\n\nvar _asyncToGenerator2 = __webpack_require__(/*! babel-runtime/helpers/asyncToGenerator */ \"./node_modules/babel-runtime/helpers/asyncToGenerator.js\");\n\nvar _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Delay = __webpack_require__(/*! ./Delay */ \"./src/Delay.js\");\nvar InSeries = __webpack_require__(/*! ./InSeries */ \"./src/InSeries.js\");\nvar Race = __webpack_require__(/*! ./Race */ \"./src/Race.js\");\nvar PassThrough = __webpack_require__(/*! ./PassThrough */ \"./src/PassThrough.js\");\n\nvar DEFAULT_ERROR_TASK = function () {\n\tvar _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(request) {\n\t\treturn _regenerator2.default.wrap(function _callee$(_context) {\n\t\t\twhile (1) {\n\t\t\t\tswitch (_context.prev = _context.next) {\n\t\t\t\t\tcase 0:\n\t\t\t\t\t\tthrow new Error('TimeOut error');\n\n\t\t\t\t\tcase 1:\n\t\t\t\t\tcase 'end':\n\t\t\t\t\t\treturn _context.stop();\n\t\t\t\t}\n\t\t\t}\n\t\t}, _callee, this);\n\t}));\n\n\treturn function DEFAULT_ERROR_TASK(_x) {\n\t\treturn _ref.apply(this, arguments);\n\t};\n}();\n\n/**\n* ```javascript\n\tconst task1 = TimeOut( Delay(100), 1000);\n\tconst task2 = TimeOut( Delay(1000), 100);\n\n\tconst result1 = await task1(1); // result1 = 1, after 100 ms\n\tconst result2 = await task2(1); // throws a timeout error after 100 ms\n* ```\n*\n* @name TimeOut\n* @param {function} task - an async tasks\n* @param {function} timeOut - the number of ms before throwing an error\n* @returns {function} an async task\n* @memberof aah\n*/\nvar TimeOut = function TimeOut(task, timeOut) {\n\ttask = task || PassThrough;\n\ttimeOut = timeOut || 0;\n\tvar timeOutTask = Delay(timeOut);\n\tvar errorTask = DEFAULT_ERROR_TASK;\n\n\treturn Race(task, InSeries(timeOutTask, errorTask));\n};\n\nmodule.exports = TimeOut;\n\n//# sourceURL=webpack:///./src/TimeOut.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -1035,7 +1047,7 @@ eval("\n\nvar _regenerator = __webpack_require__(/*! babel-runtime/regenerator *
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n/** @namespace aah */\n\nmodule.exports = {\n\tCallbackify: __webpack_require__(/*! ./Callbackify */ \"./src/Callbackify.js\"),\n\tCatchError: __webpack_require__(/*! ./CatchError */ \"./src/CatchError.js\"),\n\tDelay: __webpack_require__(/*! ./Delay */ \"./src/Delay.js\"),\n\tInSeries: __webpack_require__(/*! ./InSeries */ \"./src/InSeries.js\"),\n\tInParallel: __webpack_require__(/*! ./InParallel */ \"./src/InParallel.js\"),\n\tPassThrough: __webpack_require__(/*! ./PassThrough */ \"./src/PassThrough.js\"),\n\tPromisify: __webpack_require__(/*! ./Promisify */ \"./src/Promisify.js\"),\n\tRace: __webpack_require__(/*! ./Race */ \"./src/Race.js\")\n};\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\n/** @namespace aah */\n\nmodule.exports = {\n\tCallbackify: __webpack_require__(/*! ./Callbackify */ \"./src/Callbackify.js\"),\n\tCatchError: __webpack_require__(/*! ./CatchError */ \"./src/CatchError.js\"),\n\tDelay: __webpack_require__(/*! ./Delay */ \"./src/Delay.js\"),\n\tInSeries: __webpack_require__(/*! ./InSeries */ \"./src/InSeries.js\"),\n\tInParallel: __webpack_require__(/*! ./InParallel */ \"./src/InParallel.js\"),\n\tPassThrough: __webpack_require__(/*! ./PassThrough */ \"./src/PassThrough.js\"),\n\tPromisify: __webpack_require__(/*! ./Promisify */ \"./src/Promisify.js\"),\n\tRace: __webpack_require__(/*! ./Race */ \"./src/Race.js\"),\n\tTimeOut: __webpack_require__(/*! ./TimeOut */ \"./src/TimeOut.js\")\n};\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
