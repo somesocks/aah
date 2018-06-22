@@ -20,7 +20,7 @@ const PassThrough = require('./PassThrough');
 * @memberof aah
 */
 const Callbackify = function (task) {
-	if (task.length === 0) { return PassThrough; }
+	task = task || PassThrough;
 
 	return function (callback, request) {
 		task(request)

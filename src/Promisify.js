@@ -20,7 +20,6 @@ const PassThrough = require('./PassThrough');
 * @memberof aah
 */
 const Promisify = function (task) {
-	if (task.length === 0) { return PassThrough; }
 
 	return function (request) {
 

@@ -9,10 +9,12 @@ A JavaScript library of async/await helpers
 * [aah](#aah) : <code>object</code>
     * [.Callbackify](#aah.Callbackify) ⇒ <code>function</code>
     * [.CatchError](#aah.CatchError) ⇒ <code>function</code>
+    * [.Delay](#aah.Delay) ⇒ <code>function</code>
     * [.InParallel](#aah.InParallel) ⇒ <code>function</code>
     * [.InSeries](#aah.InSeries) ⇒ <code>function</code>
     * [.PassThrough](#aah.PassThrough)
     * [.Promisify](#aah.Promisify) ⇒ <code>function</code>
+    * [.Race](#aah.Race) ⇒ <code>function</code>
 
 <a name="aah.Callbackify"></a>
 
@@ -51,6 +53,22 @@ A JavaScript library of async/await helpers
 | Param | Type | Description |
 | --- | --- | --- |
 | task | <code>function</code> | an async function to wrap around with a catch wrapper. |
+
+<a name="aah.Delay"></a>
+
+### aah.Delay ⇒ <code>function</code>
+```javascript
+	const task = Delay(1000);
+
+	const result = await task(1); // result is 1, after 1 second
+```
+
+**Kind**: static property of [<code>aah</code>](#aah)  
+**Returns**: <code>function</code> - an async function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| time | <code>number</code> | the time to delay |
 
 <a name="aah.InParallel"></a>
 
@@ -125,4 +143,23 @@ PassThrough does nothing, just passes the request through as the result
 | Param | Type | Description |
 | --- | --- | --- |
 | task | <code>function</code> | a callback-expecting function |
+
+<a name="aah.Race"></a>
+
+### aah.Race ⇒ <code>function</code>
+```javascript
+	const task = Race(
+		async (i) => i + 1,
+		async (i) => i + 2,
+	);
+
+	const result = await task(1); // 2
+```
+
+**Kind**: static property of [<code>aah</code>](#aah)  
+**Returns**: <code>function</code> - an async task that resolves or rejects as soon as the first one of its "children" resolves or rejects  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| ...tasks | <code>function</code> | any number of async tasks |
 
