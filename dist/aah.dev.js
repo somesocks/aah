@@ -96,6 +96,28 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/babel-runtime/core-js/get-iterator.js":
+/*!************************************************************!*\
+  !*** ./node_modules/babel-runtime/core-js/get-iterator.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = { \"default\": __webpack_require__(/*! core-js/library/fn/get-iterator */ \"./node_modules/core-js/library/fn/get-iterator.js\"), __esModule: true };\n\n//# sourceURL=webpack:///./node_modules/babel-runtime/core-js/get-iterator.js?");
+
+/***/ }),
+
+/***/ "./node_modules/babel-runtime/core-js/is-iterable.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/babel-runtime/core-js/is-iterable.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = { \"default\": __webpack_require__(/*! core-js/library/fn/is-iterable */ \"./node_modules/core-js/library/fn/is-iterable.js\"), __esModule: true };\n\n//# sourceURL=webpack:///./node_modules/babel-runtime/core-js/is-iterable.js?");
+
+/***/ }),
+
 /***/ "./node_modules/babel-runtime/core-js/promise.js":
 /*!*******************************************************!*\
   !*** ./node_modules/babel-runtime/core-js/promise.js ***!
@@ -119,6 +141,18 @@ eval("\n\nexports.__esModule = true;\n\nvar _promise = __webpack_require__(/*! .
 
 /***/ }),
 
+/***/ "./node_modules/babel-runtime/helpers/slicedToArray.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/babel-runtime/helpers/slicedToArray.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nexports.__esModule = true;\n\nvar _isIterable2 = __webpack_require__(/*! ../core-js/is-iterable */ \"./node_modules/babel-runtime/core-js/is-iterable.js\");\n\nvar _isIterable3 = _interopRequireDefault(_isIterable2);\n\nvar _getIterator2 = __webpack_require__(/*! ../core-js/get-iterator */ \"./node_modules/babel-runtime/core-js/get-iterator.js\");\n\nvar _getIterator3 = _interopRequireDefault(_getIterator2);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.default = function () {\n  function sliceIterator(arr, i) {\n    var _arr = [];\n    var _n = true;\n    var _d = false;\n    var _e = undefined;\n\n    try {\n      for (var _i = (0, _getIterator3.default)(arr), _s; !(_n = (_s = _i.next()).done); _n = true) {\n        _arr.push(_s.value);\n\n        if (i && _arr.length === i) break;\n      }\n    } catch (err) {\n      _d = true;\n      _e = err;\n    } finally {\n      try {\n        if (!_n && _i[\"return\"]) _i[\"return\"]();\n      } finally {\n        if (_d) throw _e;\n      }\n    }\n\n    return _arr;\n  }\n\n  return function (arr, i) {\n    if (Array.isArray(arr)) {\n      return arr;\n    } else if ((0, _isIterable3.default)(Object(arr))) {\n      return sliceIterator(arr, i);\n    } else {\n      throw new TypeError(\"Invalid attempt to destructure non-iterable instance\");\n    }\n  };\n}();\n\n//# sourceURL=webpack:///./node_modules/babel-runtime/helpers/slicedToArray.js?");
+
+/***/ }),
+
 /***/ "./node_modules/babel-runtime/regenerator/index.js":
 /*!*********************************************************!*\
   !*** ./node_modules/babel-runtime/regenerator/index.js ***!
@@ -127,6 +161,28 @@ eval("\n\nexports.__esModule = true;\n\nvar _promise = __webpack_require__(/*! .
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("module.exports = __webpack_require__(/*! regenerator-runtime */ \"./node_modules/regenerator-runtime/runtime-module.js\");\n\n\n//# sourceURL=webpack:///./node_modules/babel-runtime/regenerator/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/fn/get-iterator.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/core-js/library/fn/get-iterator.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("__webpack_require__(/*! ../modules/web.dom.iterable */ \"./node_modules/core-js/library/modules/web.dom.iterable.js\");\n__webpack_require__(/*! ../modules/es6.string.iterator */ \"./node_modules/core-js/library/modules/es6.string.iterator.js\");\nmodule.exports = __webpack_require__(/*! ../modules/core.get-iterator */ \"./node_modules/core-js/library/modules/core.get-iterator.js\");\n\n\n//# sourceURL=webpack:///./node_modules/core-js/library/fn/get-iterator.js?");
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/fn/is-iterable.js":
+/*!********************************************************!*\
+  !*** ./node_modules/core-js/library/fn/is-iterable.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("__webpack_require__(/*! ../modules/web.dom.iterable */ \"./node_modules/core-js/library/modules/web.dom.iterable.js\");\n__webpack_require__(/*! ../modules/es6.string.iterator */ \"./node_modules/core-js/library/modules/es6.string.iterator.js\");\nmodule.exports = __webpack_require__(/*! ../modules/core.is-iterable */ \"./node_modules/core-js/library/modules/core.is-iterable.js\");\n\n\n//# sourceURL=webpack:///./node_modules/core-js/library/fn/is-iterable.js?");
 
 /***/ }),
 
@@ -827,6 +883,28 @@ eval("var classof = __webpack_require__(/*! ./_classof */ \"./node_modules/core-
 
 /***/ }),
 
+/***/ "./node_modules/core-js/library/modules/core.get-iterator.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/core.get-iterator.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var anObject = __webpack_require__(/*! ./_an-object */ \"./node_modules/core-js/library/modules/_an-object.js\");\nvar get = __webpack_require__(/*! ./core.get-iterator-method */ \"./node_modules/core-js/library/modules/core.get-iterator-method.js\");\nmodule.exports = __webpack_require__(/*! ./_core */ \"./node_modules/core-js/library/modules/_core.js\").getIterator = function (it) {\n  var iterFn = get(it);\n  if (typeof iterFn != 'function') throw TypeError(it + ' is not iterable!');\n  return anObject(iterFn.call(it));\n};\n\n\n//# sourceURL=webpack:///./node_modules/core-js/library/modules/core.get-iterator.js?");
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/core.is-iterable.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/core.is-iterable.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var classof = __webpack_require__(/*! ./_classof */ \"./node_modules/core-js/library/modules/_classof.js\");\nvar ITERATOR = __webpack_require__(/*! ./_wks */ \"./node_modules/core-js/library/modules/_wks.js\")('iterator');\nvar Iterators = __webpack_require__(/*! ./_iterators */ \"./node_modules/core-js/library/modules/_iterators.js\");\nmodule.exports = __webpack_require__(/*! ./_core */ \"./node_modules/core-js/library/modules/_core.js\").isIterable = function (it) {\n  var O = Object(it);\n  return O[ITERATOR] !== undefined\n    || '@@iterator' in O\n    // eslint-disable-next-line no-prototype-builtins\n    || Iterators.hasOwnProperty(classof(O));\n};\n\n\n//# sourceURL=webpack:///./node_modules/core-js/library/modules/core.is-iterable.js?");
+
+/***/ }),
+
 /***/ "./node_modules/core-js/library/modules/es6.array.iterator.js":
 /*!********************************************************************!*\
   !*** ./node_modules/core-js/library/modules/es6.array.iterator.js ***!
@@ -1027,6 +1105,18 @@ eval("\n\nvar _regenerator = __webpack_require__(/*! babel-runtime/regenerator *
 
 /***/ }),
 
+/***/ "./src/TimeIn.js":
+/*!***********************!*\
+  !*** ./src/TimeIn.js ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _slicedToArray2 = __webpack_require__(/*! babel-runtime/helpers/slicedToArray */ \"./node_modules/babel-runtime/helpers/slicedToArray.js\");\n\nvar _slicedToArray3 = _interopRequireDefault(_slicedToArray2);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Delay = __webpack_require__(/*! ./Delay */ \"./src/Delay.js\");\nvar InSeries = __webpack_require__(/*! ./InSeries */ \"./src/InSeries.js\");\nvar InParallel = __webpack_require__(/*! ./InParallel */ \"./src/InParallel.js\");\n\nvar PassThrough = __webpack_require__(/*! ./PassThrough */ \"./src/PassThrough.js\");\n\n/**\n* ```javascript\n\tconst task = TimeIn(async (i) => i + 1, 1000);\n\n\tconst result = await task(1); // result1 = 2, after 1000 ms\n* ```\n*\n* @name TimeIn\n* @param {function} task - an async task\n* @param {function} timeIn - the minimum time the task can take\n* @returns {function} an async task\n* @memberof aah\n*/\nvar TimeIn = function TimeIn(task, timeIn) {\n\ttask = task || PassThrough;\n\ttimeIn = timeIn || 0;\n\tvar timeInTask = Delay(timeIn);\n\n\treturn InSeries(InParallel(task, timeInTask), function (_ref) {\n\t\tvar _ref2 = (0, _slicedToArray3.default)(_ref, 2),\n\t\t    res1 = _ref2[0],\n\t\t    res2 = _ref2[1];\n\n\t\treturn res1;\n\t});\n};\n\nmodule.exports = TimeIn;\n\n//# sourceURL=webpack:///./src/TimeIn.js?");
+
+/***/ }),
+
 /***/ "./src/TimeOut.js":
 /*!************************!*\
   !*** ./src/TimeOut.js ***!
@@ -1047,7 +1137,7 @@ eval("\n\nvar _regenerator = __webpack_require__(/*! babel-runtime/regenerator *
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n/** @namespace aah */\n\nmodule.exports = {\n\tCallbackify: __webpack_require__(/*! ./Callbackify */ \"./src/Callbackify.js\"),\n\tCatchError: __webpack_require__(/*! ./CatchError */ \"./src/CatchError.js\"),\n\tDelay: __webpack_require__(/*! ./Delay */ \"./src/Delay.js\"),\n\tInSeries: __webpack_require__(/*! ./InSeries */ \"./src/InSeries.js\"),\n\tInParallel: __webpack_require__(/*! ./InParallel */ \"./src/InParallel.js\"),\n\tPassThrough: __webpack_require__(/*! ./PassThrough */ \"./src/PassThrough.js\"),\n\tPromisify: __webpack_require__(/*! ./Promisify */ \"./src/Promisify.js\"),\n\tRace: __webpack_require__(/*! ./Race */ \"./src/Race.js\"),\n\tTimeOut: __webpack_require__(/*! ./TimeOut */ \"./src/TimeOut.js\")\n};\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\n/** @namespace aah */\n\nmodule.exports = {\n\tCallbackify: __webpack_require__(/*! ./Callbackify */ \"./src/Callbackify.js\"),\n\tCatchError: __webpack_require__(/*! ./CatchError */ \"./src/CatchError.js\"),\n\tDelay: __webpack_require__(/*! ./Delay */ \"./src/Delay.js\"),\n\tInSeries: __webpack_require__(/*! ./InSeries */ \"./src/InSeries.js\"),\n\tInParallel: __webpack_require__(/*! ./InParallel */ \"./src/InParallel.js\"),\n\tPassThrough: __webpack_require__(/*! ./PassThrough */ \"./src/PassThrough.js\"),\n\tPromisify: __webpack_require__(/*! ./Promisify */ \"./src/Promisify.js\"),\n\tRace: __webpack_require__(/*! ./Race */ \"./src/Race.js\"),\n\tTimeIn: __webpack_require__(/*! ./TimeIn */ \"./src/TimeIn.js\"),\n\tTimeOut: __webpack_require__(/*! ./TimeOut */ \"./src/TimeOut.js\")\n};\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

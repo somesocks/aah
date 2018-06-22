@@ -9,5 +9,6 @@ module.exports = {
 	PassThrough: require('./PassThrough'),
 	Promisify: require('./Promisify'),
 	Race: require('./Race'),
+	TimeIn: require('./TimeIn'),
 	TimeOut: require('./TimeOut'),
 };

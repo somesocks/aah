@@ -15,6 +15,7 @@ A JavaScript library of async/await helpers
     * [.PassThrough](#aah.PassThrough)
     * [.Promisify](#aah.Promisify) ⇒ <code>function</code>
     * [.Race](#aah.Race) ⇒ <code>function</code>
+    * [.TimeIn](#aah.TimeIn) ⇒ <code>function</code>
     * [.TimeOut](#aah.TimeOut) ⇒ <code>function</code>
 
 
@@ -180,6 +181,25 @@ PassThrough does nothing, just passes the request through as the result
 **Params**
 
 - ...tasks <code>function</code> - any number of async tasks
+
+
+* * *
+
+<a name="aah.TimeIn"></a>
+
+### aah.TimeIn ⇒ <code>function</code>
+```javascript
+	const task = TimeIn(async (i) => i + 1, 1000);
+
+	const result = await task(1); // result1 = 2, after 1000 ms
+```
+
+**Kind**: static property of [<code>aah</code>](#aah)  
+**Returns**: <code>function</code> - an async task  
+**Params**
+
+- task <code>function</code> - an async task
+- timeIn <code>function</code> - the minimum time the task can take
 
 
 * * *
