@@ -34,10 +34,9 @@ A JavaScript library of async/await helpers
 
 **Kind**: static property of [<code>aah</code>](#aah)  
 **Returns**: <code>function</code> - a callback-expecting function  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| task | <code>function</code> | an async function |
+- task <code>function</code> - an async function
 
 <a name="aah.CatchError"></a>
 
@@ -50,10 +49,9 @@ A JavaScript library of async/await helpers
 
 **Kind**: static property of [<code>aah</code>](#aah)  
 **Returns**: <code>function</code> - an async wrapper function around the task  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| task | <code>function</code> | an async function to wrap around with a catch wrapper. |
+- task <code>function</code> - an async function to wrap around with a catch wrapper.
 
 <a name="aah.Delay"></a>
 
@@ -66,10 +64,9 @@ A JavaScript library of async/await helpers
 
 **Kind**: static property of [<code>aah</code>](#aah)  
 **Returns**: <code>function</code> - an async function  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| time | <code>number</code> | the time to delay |
+- time <code>number</code> - the time to delay
 
 <a name="aah.InParallel"></a>
 
@@ -86,10 +83,9 @@ A JavaScript library of async/await helpers
 
 **Kind**: static property of [<code>aah</code>](#aah)  
 **Returns**: <code>function</code> - an async wrapper function that runs all the tasks in parallel, and returns an array of results  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| ...tasks | <code>function</code> | any number of async tasks. |
+- ...tasks <code>function</code> - any number of async tasks.
 
 <a name="aah.InSeries"></a>
 
@@ -106,10 +102,9 @@ A JavaScript library of async/await helpers
 
 **Kind**: static property of [<code>aah</code>](#aah)  
 **Returns**: <code>function</code> - an async wrapper function that runs all of the tasks in series, calling each one with the results of the previous one  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| ...tasks | <code>function</code> | any number of async tasks. |
+- ...tasks <code>function</code> - any number of async tasks.
 
 <a name="aah.PassThrough"></a>
 
@@ -140,10 +135,9 @@ PassThrough does nothing, just passes the request through as the result
 
 **Kind**: static property of [<code>aah</code>](#aah)  
 **Returns**: <code>function</code> - an async function  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| task | <code>function</code> | a callback-expecting function |
+- task <code>function</code> - a callback-expecting function
 
 <a name="aah.Race"></a>
 
@@ -159,10 +153,9 @@ PassThrough does nothing, just passes the request through as the result
 
 **Kind**: static property of [<code>aah</code>](#aah)  
 **Returns**: <code>function</code> - an async task that resolves or rejects as soon as the first one of its "children" resolves or rejects  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| ...tasks | <code>function</code> | any number of async tasks |
+- ...tasks <code>function</code> - any number of async tasks
 
 <a name="aah.TimeOut"></a>
 
@@ -177,9 +170,8 @@ PassThrough does nothing, just passes the request through as the result
 
 **Kind**: static property of [<code>aah</code>](#aah)  
 **Returns**: <code>function</code> - an async task  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| task | <code>function</code> | an async tasks |
-| timeOut | <code>function</code> | the number of ms before throwing an error |
+- task <code>function</code> - an async tasks
+- timeOut <code>function</code> - the number of ms before throwing an error
 
