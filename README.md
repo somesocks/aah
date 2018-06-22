@@ -17,6 +17,9 @@ A JavaScript library of async/await helpers
     * [.Race](#aah.Race) ⇒ <code>function</code>
     * [.TimeOut](#aah.TimeOut) ⇒ <code>function</code>
 
+
+* * *
+
 <a name="aah.Callbackify"></a>
 
 ### aah.Callbackify ⇒ <code>function</code>
@@ -38,6 +41,9 @@ A JavaScript library of async/await helpers
 
 - task <code>function</code> - an async function
 
+
+* * *
+
 <a name="aah.CatchError"></a>
 
 ### aah.CatchError ⇒ <code>function</code>
@@ -53,6 +59,9 @@ A JavaScript library of async/await helpers
 
 - task <code>function</code> - an async function to wrap around with a catch wrapper.
 
+
+* * *
+
 <a name="aah.Delay"></a>
 
 ### aah.Delay ⇒ <code>function</code>
@@ -67,6 +76,9 @@ A JavaScript library of async/await helpers
 **Params**
 
 - time <code>number</code> - the time to delay
+
+
+* * *
 
 <a name="aah.InParallel"></a>
 
@@ -87,6 +99,9 @@ A JavaScript library of async/await helpers
 
 - ...tasks <code>function</code> - any number of async tasks.
 
+
+* * *
+
 <a name="aah.InSeries"></a>
 
 ### aah.InSeries ⇒ <code>function</code>
@@ -106,6 +121,9 @@ A JavaScript library of async/await helpers
 
 - ...tasks <code>function</code> - any number of async tasks.
 
+
+* * *
+
 <a name="aah.PassThrough"></a>
 
 ### aah.PassThrough
@@ -118,6 +136,9 @@ A JavaScript library of async/await helpers
 PassThrough does nothing, just passes the request through as the result
 
 **Kind**: static property of [<code>aah</code>](#aah)  
+
+* * *
+
 <a name="aah.Promisify"></a>
 
 ### aah.Promisify ⇒ <code>function</code>
@@ -139,6 +160,9 @@ PassThrough does nothing, just passes the request through as the result
 
 - task <code>function</code> - a callback-expecting function
 
+
+* * *
+
 <a name="aah.Race"></a>
 
 ### aah.Race ⇒ <code>function</code>
@@ -157,6 +181,9 @@ PassThrough does nothing, just passes the request through as the result
 
 - ...tasks <code>function</code> - any number of async tasks
 
+
+* * *
+
 <a name="aah.TimeOut"></a>
 
 ### aah.TimeOut ⇒ <code>function</code>
@@ -174,4 +201,7 @@ PassThrough does nothing, just passes the request through as the result
 
 - task <code>function</code> - an async tasks
 - timeOut <code>function</code> - the number of ms before throwing an error
+
+
+* * *
 
