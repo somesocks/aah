@@ -17,6 +17,7 @@ A JavaScript library of async/await helpers
     * [.Race](#aah.Race) ⇒ <code>function</code>
     * [.TimeIn](#aah.TimeIn) ⇒ <code>function</code>
     * [.TimeOut](#aah.TimeOut) ⇒ <code>function</code>
+    * [.Logging(...statements)](#aah.Logging) ⇒ <code>function</code>
 
 
 * * *
@@ -221,6 +222,21 @@ PassThrough does nothing, just passes the request through as the result
 
 - task <code>function</code> - an async tasks
 - timeOut <code>function</code> - the number of ms before throwing an error
+
+
+* * *
+
+<a name="aah.Logging"></a>
+
+### aah.Logging(...statements) ⇒ <code>function</code>
+A logging utility.
+It passes the request received into all the statements, collects the results, and pushes them into console.log
+
+**Kind**: static method of [<code>aah</code>](#aah)  
+**Returns**: <code>function</code> - a logging task  
+**Params**
+
+- ...statements <code>\*</code> - any number of logging values.  Functions are called with the calling request, everything else is passed directly to
 
 
 * * *

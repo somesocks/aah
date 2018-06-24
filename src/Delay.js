@@ -1,3 +1,4 @@
+/* global setTimeout */
 
 /**
 * ```javascript
@@ -23,4 +24,4 @@ const Delay = function (time) {
 	};
 };
 
-module.exports = Delay;
+export default Delay;

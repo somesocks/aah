@@ -1,3 +1,5 @@
+/* global __dirname */
+
 const glob = require('glob');
 
 const BUILDS = glob

@@ -1,5 +1,5 @@
 
-const PassThrough = require('./PassThrough');
+import PassThrough from './PassThrough';
 
 /**
 * ```javascript
@@ -31,4 +31,4 @@ const CatchError = function (task) {
 
 };
 
-module.exports = CatchError;
+export default CatchError;

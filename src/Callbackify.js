@@ -1,5 +1,5 @@
 
-const PassThrough = require('./PassThrough');
+import PassThrough from './PassThrough';
 
 /**
 * ```javascript
@@ -29,4 +29,4 @@ const Callbackify = function (task) {
 	};
 };
 
-module.exports = Callbackify;
+export default Callbackify;

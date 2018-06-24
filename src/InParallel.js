@@ -1,5 +1,5 @@
 
-const PassThrough = require('./PassThrough');
+import PassThrough from './PassThrough';
 
 /**
 * ```javascript
@@ -31,4 +31,4 @@ const InParallel = function (...tasks) {
 
 };
 
-module.exports = InParallel;
+export default InParallel;

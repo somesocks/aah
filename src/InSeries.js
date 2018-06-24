@@ -1,5 +1,5 @@
 
-const PassThrough = require('./PassThrough');
+import PassThrough from './PassThrough';
 
 /**
 * ```javascript
@@ -35,4 +35,4 @@ const InSeries = function (...tasks) {
 
 };
 
-module.exports = InSeries;
+export default InSeries;

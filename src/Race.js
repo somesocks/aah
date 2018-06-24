@@ -1,5 +1,5 @@
 
-const PassThrough = require('./PassThrough');
+import PassThrough from './PassThrough';
 
 /**
 * ```javascript
@@ -24,4 +24,4 @@ const Race = function (...tasks) {
 	};
 };
 
-module.exports = Race;
+export default Race;

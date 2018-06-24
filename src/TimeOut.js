@@ -1,8 +1,8 @@
 
-const Delay = require('./Delay');
-const InSeries = require('./InSeries');
-const Race = require('./Race');
-const PassThrough = require('./PassThrough');
+import Delay from './Delay';
+import InSeries from './InSeries';
+import Race from './Race';
+import PassThrough from './PassThrough';
 
 const DEFAULT_ERROR_TASK = async function (request) {
 	throw new Error('TimeOut error');
@@ -35,4 +35,4 @@ const TimeOut = function (task, timeOut) {
 	);
 };
 
-module.exports = TimeOut;
+export default TimeOut;

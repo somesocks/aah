@@ -1,6 +1,4 @@
 
-const PassThrough = require('./PassThrough');
-
 /**
 * ```javascript
 	const task = Promisify(
@@ -43,4 +41,4 @@ const Promisify = function (task) {
 	};
 };
 
-module.exports = Promisify;
+export default Promisify;

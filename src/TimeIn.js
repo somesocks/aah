@@ -1,9 +1,9 @@
 
-const Delay = require('./Delay');
-const InSeries = require('./InSeries');
-const InParallel = require('./InParallel');
+import Delay from './Delay';
+import InSeries from './InSeries';
+import InParallel from './InParallel';
 
-const PassThrough = require('./PassThrough');
+import PassThrough from './PassThrough';
 
 /**
 * ```javascript
@@ -29,4 +29,4 @@ const TimeIn = function (task, timeIn) {
 	)
 };
 
-module.exports = TimeIn;
+export default TimeIn;
