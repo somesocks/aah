@@ -32,7 +32,6 @@ build: build-docs
 	cp ./src/* ./dist
 	cp ./README.md ./dist
 	cp ./package.json ./dist
-	cp ./shrinkwrap.yaml ./dist
 
 ##		make publish - publish the package
 ##
