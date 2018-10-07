@@ -3,7 +3,7 @@ const PassThrough = require('./PassThrough');
 
 /**
 * ```javascript
-	const task = InSeries(
+	const task = InOrder(
 		async (i) => i + 1,
 		async (i) => i + 1,
 		async (i) => i + 1
@@ -12,12 +12,12 @@ const PassThrough = require('./PassThrough');
 	const results = await task(0); // results is 3
 * ```
 *
-* @name InSeries
+* @name InOrder
 * @param {...function} tasks - any number of async tasks.
-* @returns {function} an async wrapper function that runs all of the tasks in series, calling each one with the results of the previous one
+* @returns {function} an async wrapper function that runs all of the tasks in order, calling each one with original request
 * @memberof aah
 */
-const InSeries = function (...tasks) {
+const InOrder = function (...tasks) {
 	tasks = tasks || [];
 
 	if (tasks.length === 0) { return PassThrough; }
@@ -26,7 +26,7 @@ const InSeries = function (...tasks) {
 		let index = 0;
 
 		while (index < tasks.length) {
-			request = await tasks[index](request);
+			await tasks[index](request);
 			index++;
 		}
 
@@ -35,4 +35,4 @@ const InSeries = function (...tasks) {
 
 };
 
-module.exports = InSeries;
+module.exports = InOrder;
