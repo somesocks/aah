@@ -13,6 +13,8 @@ A JavaScript library of async/await helpers
     * [.InOrder](#aah.InOrder) ⇒ <code>function</code>
     * [.InParallel](#aah.InParallel) ⇒ <code>function</code>
     * [.InSeries](#aah.InSeries) ⇒ <code>function</code>
+    * [.ParallelFilter](#aah.ParallelFilter) ⇒ <code>function</code>
+    * [.ParallelMap](#aah.ParallelMap) ⇒ <code>function</code>
     * [.PassThrough](#aah.PassThrough)
     * [.Promisify](#aah.Promisify) ⇒ <code>function</code>
     * [.Race](#aah.Race) ⇒ <code>function</code>
@@ -146,6 +148,46 @@ A JavaScript library of async/await helpers
 **Params**
 
 - ...tasks <code>function</code> - any number of async tasks.
+
+
+* * *
+
+<a name="aah.ParallelFilter"></a>
+
+### aah.ParallelFilter ⇒ <code>function</code>
+```javascript
+	const task = ParallelFilter(
+		async (val, i) => val % 2 === 0
+	);
+
+	const results = await task([0, 1, 2]); // results is [0, 2]
+```
+
+**Kind**: static property of [<code>aah</code>](#aah)  
+**Returns**: <code>function</code> - an async wrapper function that takes in an array of requests, runs the task in parallel, once for each input in the array, and returns an array of results  
+**Params**
+
+- task <code>function</code> - the filtering task
+
+
+* * *
+
+<a name="aah.ParallelMap"></a>
+
+### aah.ParallelMap ⇒ <code>function</code>
+```javascript
+	const task = ParallelMap(
+		async (val, i) => val + 1
+	);
+
+	const results = await task([0, 1, 2]); // results is [1, 2, 3]
+```
+
+**Kind**: static property of [<code>aah</code>](#aah)  
+**Returns**: <code>function</code> - an async wrapper function that takes in an array of requests, runs the task in parallel, once for each input in the array, and returns an array of results  
+**Params**
+
+- task <code>function</code> - the mapping task
 
 
 * * *

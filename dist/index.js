@@ -14,6 +14,9 @@ const Race = require('./Race');
 const TimeIn = require('./TimeIn');
 const TimeOut = require('./TimeOut');
 
+const ParallelMap = require('./ParallelMap');
+const ParallelFilter = require('./ParallelFilter');
+
 module.exports = {
 	Assert,
 	Callbackify,
@@ -28,4 +31,8 @@ module.exports = {
 	Race,
 	TimeIn,
 	TimeOut,
+
+	ParallelMap,
+	ParallelFilter,
+
 };
